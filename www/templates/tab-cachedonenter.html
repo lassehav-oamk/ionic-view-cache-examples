@@ -1,0 +1,28 @@
+<ion-view view-title="Account">
+  <ion-content class="padding">
+    <h2>Data loading on enter -event</h2>
+    <div>
+      <p>
+        Here the controller has subscribed to the ionic 'enter' event, which is fired every time when a view is entered. See details of view lifecycle from here <a href="http://ionicframework.com/docs/api/directive/ionView/">http://ionicframework.com/docs/api/directive/ionView/</a>.
+      </p>
+      <p>
+        The controller then makes a data request each time when it receives the enter -event. Thus the data dependent parts of the view get updated, while the other parts come straight from the cache. That is the reason why you also see the old data remaining in the view for a short while when you come back to the view. 
+      </p>
+      <p>
+        One slightly similar solution to this to use the resolve functionality of the AngularUI Router. See details from here <a href="https://github.com/angular-ui/ui-router/wiki#resolve">https://github.com/angular-ui/ui-router/wiki#resolve</a>.  
+        </p>
+    </div>
+    <div class="row">
+      <div class="col">Gender</div>
+      <div class="col">{{data.gender}}</div>
+    </div>
+    <div class="row">
+      <div class="col">Name</div>
+      <div class="col">{{data.name.first}} {{data.name.last}}</div>
+    </div>
+    <div class="row">
+      <div class="col">Email</div>
+      <div class="col">{{data.email}}</div>
+    </div>
+  </ion-content>
+</ion-view>
